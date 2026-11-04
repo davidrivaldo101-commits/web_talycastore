@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Talyca Store Metro</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <a href="index.html" class="brand">
+            <img src="gambar/logo.jpg" alt="Logo Talyca Store Metro" width="40" height="40">
+            <span>Talyca Store</span>
+        </a>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="index.html#produk">Produk</a></li>
+                <li><a href="index.html#kontak">Kontak</a></li>
+                <li><a href="index.html#vidio">Vidio</a></li>
+                <li><a href="index.html#tentang">Tentang</a></li>
+                <li id="auth-menu"></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="auth-page">
+        <section class="auth-card">
+            <h1>Masuk Akun</h1>
+            <p class="subtitle">Silahkan login untuk melihat halaman akun</p>
+
+            <p id="pesan" class="alert" hidden></p>
+
+            <form id="formLogin" novalidate>
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Masukan Nama" autocomplete="username"
+                    required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Masukkan Password"
+                    autocomplete="current-password" required>
+
+                <button type="submit" class="btn-submit">Login</button>
+            </form>
+
+            <div class="demo-info">
+                <strong>Akun demo</strong> <br>
+                admin | admin123 <br>
+                david | david123
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Talyca Store Metro. Website sampel latihan PKL, bukan website resmi.</p>
+    </footer>
+
+    <script src="js/auth.js"></script>
+    <script>
+        const pesan = document.getElementById("pesan");
+        function tampil(teks, jenis) {
+            pesan.textContent = teks;
+            pesan.className = "alert" + jenis;
+            pesan.hidden = false
+        }
+
+        // pesan dari halaman lain (?pesan=logout / ?pesan=wajib)
+        const p = new URLSearchParams(window.location.search).get("pesan");
+        if (p === "logout") tampil("Anda berhasil logout.", "ok");
+        if (p === "wajib") tampil("Silahkan login terlebih dahulu.", "err");
+
+        // Jika sudah login langsung ke dashboard
+        if (getUser()) window.location.href = "dashboard.html";
+
+        document.getElementById("formLogin").addEventListener("submit", function (e) {
+            e.preventDefault();
+            const u = document.getElementById("username").value.trim();
+            const pw = document.getElementById("password").value;
+            if (u === "" || pw === "") { tampil("Username dan password wajib diisi.", "err"); return; }
+            if (login(u, pw)) { window.location.href = "dashboard.html"; }
+            else { tampil("Username atau password salah.", "err"); }
+        });
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akun Saya | Talyca Store✨</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<header class="navbar">
+    <a href="index.html" class="brand">
+        <img src="gambar/logo.jpg" alt="Logo Veallshop Metro" width="40" height="40">
+        <span>Talyca Store📍</span>
+    </a>
+    <nav>
+        <ul class="menu">
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="index.html#produk">Produk</a></li>
+            <li><a href="index.html#kontak">Kontak</a></li>
+            <li><a href="index.html#vidio">Vidio</a></li>
+            <li><a href="index.html#tentang">Tentang</a></li>
+            <li id="auth-menu"></li>
+        </ul>
+    </nav>
+</header>
+
+
+
+
+<main class="section dashboard">
+    <h1 id="judul">Akun Saya</h1>
+    <p class="subtitle" id="sapa"></p>
+    <div class="kontak-grid">
+        <div class="kontak-box">
+            <h3>Nama</h3>
+            <p id="dNama"></p>
+        </div>
+        <div class="kontak-box">
+            <h3>Username</h3>
+            <p id="dUser"></p>
+        </div>
+        <div class="kontak-box">
+            <h3>Peran</h3>
+            <p id="dRole"></p>
+        </div>
+    </div>
+    <!-- Hanya tampil untuk Admin -->
+    <section id="panelAdmin" class="panel" hidden>
+        <h2>Daftar Pesanan Masuk (contoh)</h2>
+        <div class="table-wrap">
+            <table class="tabel">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Pemesanan</th>
+                        <th>Produk</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>David</td>
+                        <td>Lamborghini eventador</td>
+                        <td>Diproses</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Munir</td>
+                        <td>Baju Batman</td>
+                        <td>Ngutang</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Dino</td>
+                        <td>Baju Spiderman</td>
+                        <td> Selesai</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <section id="panelUser" class="panel" hidden>
+        <h2>Pesanan Saya</h2>
+        <p>Belum ada pesanan. Yuk lihat <a href="index.html#produk" class="link">produk kami</a>.</p>
+    </section>
+</main>
+<footer class="footer">
+    <p>&copy; 2026 Talyca Store. Website sampel latihan PKL, bukan website resmi.</p>
+</footer>
+<script src="js/auth.js"></script>
+<script>
+    requireLogin(); // wajib login, kalau tidak ke login.html
+    const user = getUser();
+    if (user) {
+        document.getElementById("sapa").textContent = "Selamat datang, " + user.nama + "!";
+        document.getElementById("dNama").textContent = user.nama;
+        document.getElementById("dUser").textContent = user.username;
+        document.getElementById("dRole").textContent = user.role;
+        // Tampilan berbeda sesuai peran
+        document.getElementById(user.role === "Admin" ? "panelAdmin" : "panelUser").hidden = false;
+    }
+</script>
+</body>
+
+</html>

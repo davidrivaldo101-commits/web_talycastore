@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Veallshop Metro - Toko bunga di Metro, Lampung. Buket, bloombox, wedding, dan parcel.">
+    <title>Veallshop Metro | Toko Bunga Metro Lampung</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .hero-section {
+            background: linear-gradient(180deg, rgba(20, 55, 120, 0.85) 0%, rgba(12, 32, 75, 0.92) 100%),
+                url('gambar/9.png') no-repeat center center/cover;
+            background-blend-mode: multiply;
+            min-height: calc(100vh - 76px);
+            position: relative;
+            padding: 60px 0;
+        }
+
+        .tag-pill {
+            background-color: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            border-radius: 50px;
+            padding: 6px 16px;
+            font-size: 0.85rem;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .hero-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            line-height: 1.25;
+            letter-spacing: -0.5px;
+        }
+
+        .hero-title .text-blue {
+            color: #38bdf8;
+        }
+
+        .hero-desc {
+            color: #cbd5e1;
+            font-size: 1.05rem;
+            max-width: 650px;
+            margin: 0 auto;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 12px;
+            padding: 20px 15px;
+            color: white;
+            backdrop-filter: blur(10px);
+        }
+
+        .stat-icon {
+            font-size: 1.2rem;
+            color: #38bdf8;
+            margin-bottom: 5px;
+        }
+
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .stat-label {
+            font-size: 0.78rem;
+            color: #94a3b8;
+            margin: 0;
+        }
+
+        .scroll-down {
+            color: #94a3b8;
+            font-size: 0.85rem;
+            text-decoration: none;
+        }
+
+        .scroll-down:hover {
+            color: #ffffff;
+        }
+
+        .text {
+            color: grey;
+            font-size: 20px;
+        }
+
+        .detail {
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn-custom-blue {
+            background-color: #0088ff;
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            font-weight: 600;
+            border-radius: 8px;
+        }
+
+        .btn-custom-blue:hover {
+            background-color: #0077e6;
+            color: #fff;
+        }
+
+        .btn-custom-white {
+            background-color: #ffffff;
+            color: #0088ff;
+            border: none;
+            padding: 12px 24px;
+            font-weight: 600;
+            border-radius: 8px;
+        }
+
+        .btn-custom-white:hover {
+            background-color: #f8fafc;
+            color: #0066cc;
+        }
+
+        .isinya {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 12px;
+            padding: 20px 15px;
+            color: white;
+            backdrop-filter: blur(10px);
+            margin-top: 15px;
+        }
+
+        .wa-icon-btn {
+            background-color: #25d366;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            font-size: 28px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-decoration: none;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .wa-chat-box {
+            background-color: #ffffff;
+            color: #333;
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            line-height: 1.3;
+            text-align: left;
+
+        }
+
+        .wa-icon-btn:hover {
+            color: white;
+            transform: scale(1.08);
+        }
+
+        .wa-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            z-index: 1000;
+        }
+
+        .produk .card {
+            background: #fff;
+            box-shadow: 0 5px 18px rgba(90, 40, 65, .07);
+            transition: transform .3s ease, box-shadow .3s ease;
+
+        }
+
+        .produk .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 14px 26px black;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 1. NAVBAR -->
+    <header class="navbar">
+        <a href="#beranda" class="brand">
+            <img src="gambar/logo.jpg" alt="Logo Veallshop Metro" width="40" height="40">
+            <span>Talyca Store</span>
+        </a>
+        <nav>
+            <ul class="menu">
+                <li><a href="#beranda">Beranda</a></li>
+                <li><a href="#produk">Produk</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+                <li><a href="#vidio">Vidio</a></li>
+                <li><a href="#tentang">Tentang</a></li>
+                <li id="auth-menu"></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero-section d-flex align-items-center text-center">
+        <div class="container py-5">
+            <div class="d-flex justify-content-center gap-2 flex-wrap mb-4">
+                <span class="tag-pill">Toko Online</span>
+                <span class="tag-pill">Busana</span>
+                <span class="tag-pill">Fashion</span>
+            </div>
+
+            <h1 class="hero-title text-white mb-3">
+                Tampil Lebih Mempesona<br>
+                <span class="text-blue">Bersama talyca store</span>
+            </h1>
+
+            <p class="hero-desc mb-4">
+                Temukan berbagai produk pilihan yang stylish, kekinian, dan cocok untuk melengkapi kebutuhanmu
+                sehari-hari.
+                Dengan pilihan produk menarik dan harga bersahabat, Talyca Store siap menemani gaya kamu agar semakin
+                percaya diri.
+                Yuk, belanja sekarang dan temukan produk favoritmu hanya di @talyca.store! 💕✨
+            </p>
+
+            <div class="d-flex justify-content-center gap-3 mb-5 flex-wrap">
+                <a href="https://wa.me/6285896678641" class="btn btn-custom-blue">
+                    <i class="bi bi-whatsapp me-2"></i>Chat Admin Sekarang
+                </a>
+                <a href="#produk" class="btn btn-custom-white">
+                    Lihat Produk
+                    <i class="bi bi-arrow-right ms-1"></i>
+                </a>
+            </div>
+
+            <div class="row justify-content-center g-3 mb-4">
+                <div class="col-6 col-md-3 col-lg-2">
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="bi bi-rocket-takeoff-fill"></i></div>
+                        <div class="stat-number">24+</div>
+                        <p class="stat-label">Respon Cepat</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2">
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="bi bi-star-fill"></i></div>
+                        <div class="stat-number">90%</div>
+                        <p class="stat-label">Klien Puas</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2">
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="bi bi-shield-lock-fill"></i></div>
+                        <div class="stat-number">9/10+</div>
+                        <p class="stat-label">Bahan Awet</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-4">
+                <a href="#produk" class="scroll-down d-inline-flex flex-column align-items-center">
+                    <span>Scroll ke bawah</span>
+                    <i class="bi bi-chevron-down mt-1"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-light py-5">
+
+        <div class="container text-center">
+
+            <h2 class="title fw-bold text-center" id="produk">
+                Produk Kami
+            </h2>
+
+            <p class=" text text-center">
+                Temukan berbagai produk unggulan di Talyca Store
+            </p>
+
+            <!-- Produk -->
+            <!-- BAJUU -->
+            <div class="produk row mt-4 g-3">
+                <div class="col-md-6 col-lg-3">
+
+                    <div class="card h-100 shadow-sm">
+
+                        <img src="gambar/baju1.jpeg" class="card-img-top" alt="baju">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">
+                                CROPTOP SALUR💫
+                            </h5>
+
+                            <p class="card-text text-muted">
+                                Tampil modis dan elegan dengan kemeja stripe kekinian,
+                                perpaduan warna cantik, cocok untuk kuliah, kerja, hangout, dan juga outfit harianmu!
+                            <div>💕</div>
+                            </p>
+                            </p>
+
+                            <h5 class="text-primary">
+                                Rp35.000
+                            </h5>
+
+                            <a href="https://wa.me/6285896678641" class="btn btn-primary 2-100 mt-2">
+                                Pesan
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+
+                    <div class="card h-100 shadow-sm">
+
+                        <img src="gambar/baju2.jpeg" class="card-img-top" alt="Celana">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">
+                                CROPTOP SERUT💫
+                            </h5>
+
+                            <p class="card-text text-muted">
+                                Tampil manis dan kekinian dengan crop top lengan panjang,
+                                bahan nyaman, warna cantik, cocok untuk hangout, kuliah, dan outfit harianmu!
+                            <div>💕</div>
+                            </p>
+
+                            <h5 class="text-primary">
+                                Rp35.000
+                            </h5>
+
+                            <a href="https://wa.me/6285896678641" class="btn btn-primary 2-100 mt-2">
+                                Pesan
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+
+                    <div class="card h-100 shadow-sm">
+
+                        <img src="gambar/baju3.jpeg" class="card-img-top" alt="Sepatu">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">
+                                CROPTOP SERUT💫
+                            </h5>
+
+                            <p class="card-text text-muted">
+                                Tampil anggun dan kekinian dengan blouse lengan panjang beraksen pita manis,
+                                desain elegan, cocok untuk kuliah, hangout, dan outfit sehari-hari!
+                            <div>💕</div>
+                            </p>
+
+                            <h5 class="text-primary">
+                                Rp35.000
+                            </h5>
+
+                            <a href="https://wa.me/6285896678641" class="btn btn-primary 2-100 mt-2">
+                                Pesan
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+
+                    <div class="card h-100 shadow-sm">
+
+                        <img src="gambar/baju4.jpeg" class="card-img-top" alt="Jaket">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">
+                                CROPTOP SERUT💫
+                            </h5>
+
+                            <p class="card-text text-muted">
+                                Tampil stylish dengan kaos Alo lengan panjang, desain simpel modern,
+                                detail tali serut cantik, cocok untuk olahraga, hangout, dan outfit harian!
+                            <div>💕</div>
+                            </p>
+
+                            <h5 class="text-primary">
+                                Rp35.000
+                            </h5>
+
+                            <a href="https://wa.me/6285896678641" class="btn btn-primary 2-100 mt-2">
+                                Pesan
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- TASSS -->
+                <div class="col-md-6 col-lg-3">
+
+                    <div class="card h-100 shadow-sm">
+
+                        <img src="gambar/tas1.jpeg" class="card-img-top" alt="Jaket">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">
+                                CANDY BAG BABY BEAR👜
+                            </h5>
+
+                            <p class="card-text text-muted">
+                                Tampil elegan dengan tas wanita kekinian, desain mewah, detail pita cantik,
+                                dilengkapi gantungan boneka lucu, cocok untuk aktivitas sehari-hari!
+                            <div>✨</div>
+                            </p>
+
+                            <h5 class="text-primary">
+                                Rp35.000
+                            </h5>
+
+                            <a href="https://wa.me/6285896678641" class="btn btn-primary 2-100 mt-2">
+                                Pesan
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+
+                    <div class="card h-100 shadow-sm">
+
+                        <img src="gambar/tas2.jpeg" class="card-img-top" alt="Jaket">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">
+                                CANDY BAG MOTIF👜
+                            </h5>
+
+                            <p class="card-text text-muted">
+                                Tampil stylish dengan tas wanita motif elegan, warna cantik,
+                                gantungan cherry lucu dan tali panjang, cocok untuk berbagai aktivitas harian!
+                            <div>🍒</div>
+                            </p>
+
+                            <h5 class="text-primary">
+                                Rp35.000
+                            </h5>
+
+                            <a href="https://wa.me/6285896678641" class="btn btn-primary 2-100 mt-2">
+                                Pesan
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+
+                    <div class="card h-100 shadow-sm">
+
+                        <img src="gambar/tas3.jpeg" class="card-img-top" alt="Jaket">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">
+                                CANDY BAG BABY BEAR👜
+                            </h5>
+
+                            <p class="card-text text-muted">
+                                Tampil elegan dengan tas wanita hitam yang stylish, desain simpel,
+                                gantungan boneka lucu dan tali panjang, cocok untuk aktivitas sehari-hari!
+                            <div>🧸</div>
+                            </p>
+
+                            <h5 class="text-primary">
+                                Rp35.000
+                            </h5>
+
+                            <a href="https://wa.me/6285896678641" class="btn btn-primary 2-100 mt-2">
+                                Pesan
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+
+                    <div class="card h-100 shadow-sm">
+
+                        <img src="gambar/tas4.jpeg" class="card-img-top" alt="Jaket">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">
+                                CANDY BAG POLKA👜
+                            </h5>
+
+                            <p class="card-text text-muted">
+                                ampil cute dan stylish dengan Candy Bag Polka,
+                                motif polkadot yang manis, desain kekinian, cocok untuk kuliah, hangout, dan aktivitas
+                                harian!
+                            <div>✨</div>
+                            </p>
+
+                            <h5 class="text-primary">
+                                Rp35.000
+                            </h5>
+
+                            <a href="https://wa.me/6285896678641" class="btn btn-primary 2-100 mt-2">
+                                Pesan
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CELANAA -->
+                <div class="col-md-6 col-lg-3">
+
+                    <div class="card h-100 shadow-sm">
+
+                        <img src="gambar/celana1.png" class="card-img-top" alt="Jaket">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">
+                                SWEAT PANTS✨
+                            </h5>
+
+                            <p class="card-text text-muted">
+                                Sweat pants kekinian, nyaman dipakai seharian! Cocok buat santai, jalan-jalan,
+                                olahraga, atau OOTD kece. Yuk, checkout sekarang sebelum kehabisan! 
+                                <div>🛒🔥</div>
+                            </p>
+
+                            <h5 class="text-primary">
+                                Rp35.000
+                            </h5>
+
+                            <a href="https://wa.me/6285896678641" class="btn btn-primary 2-100 mt-2">
+                                Pesan
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+
+                    <div class="card h-100 shadow-sm">
+
+                        <img src="gambar/celana2.jpeg" class="card-img-top" alt="Jaket">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">
+                                KULOT KARGO✨
+                            </h5>
+
+                            <p class="card-text text-muted">
+                                Kulot kargo kekinian, bikin OOTD makin stylish! Model longgar,
+                                nyaman dipakai, dan mudah dipadukan. Yuk, checkout sekarang sebelum kehabisan! 
+                                <div>🛒✨</div>
+                            </p>
+
+                            <h5 class="text-primary">
+                                Rp35.000
+                            </h5>
+
+                            <a href="https://wa.me/6285896678641" class="btn btn-primary 2-100 mt-2">
+                                Pesan
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+
+                    <div class="card h-100 shadow-sm">
+
+                        <img src="gambar/celana3.jpeg" class="card-img-top" alt="Jaket">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">
+                                KULOT SCUBA✨
+                            </h5>
+
+                            <p class="card-text text-muted">
+                                Kulot scuba kekinian, tampil elegan dan stylish setiap saat!
+                                Nyaman dipakai, cocok untuk berbagai acara. Yuk, checkout sekarang sebelum kehabisan!
+                                <div>🛍️🔥</div>
+                            </p>
+
+                            <h5 class="text-primary">
+                                Rp35.000
+                            </h5>
+
+                            <a href="https://wa.me/6285896678641" class="btn btn-primary 2-100 mt-2">
+                                Pesan
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+
+                    <div class="card h-100 shadow-sm">
+
+                        <img src="gambar/celana4.jpeg" class="card-img-top" alt="Jaket">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">
+                                KULOT VISCOSE MOTIF✨
+                            </h5>
+
+                            <p class="card-text text-muted">
+                                Kulot viscose motif, tampil cantik dan fashionable! Motif kece, nyaman dipakai,
+                                cocok untuk berbagai aktivitas. Yuk, checkout sekarang sebelum kehabisan! 
+                                <div>🛍️🔥</div>
+                            </p>
+
+                            <h5 class="text-primary">
+                                Rp35.000
+                            </h5>
+
+                            <a href="https://wa.me/6285896678641" class="btn btn-primary 2-100 mt-2">
+                                Pesan
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+
+                    <div class="card h-100 shadow-sm">
+
+                        <img src="gambar/sepatu1.png" class="card-img-top" alt="Jaket">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">
+                                FLATSHOES JARING💫
+                            </h5>
+
+                            <p class="card-text text-muted">
+                                Tampil cantik dan elegan dengan flatshoes jaring yang ringan, nyaman dipakai,
+                                cocok untuk kuliah, kerja, jalan-jalan, dan aktivitas sehari-hari.🔥
+                            </p>
+
+                            <h5 class="text-primary">
+                                Rp35.000
+                            </h5>
+
+                            <a href="https://wa.me/6285896678641" class="btn btn-primary 2-100 mt-2">
+                                Pesan
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+
+                    <div class="card h-100 shadow-sm">
+
+                        <img src="gambar/sepatu2.jpeg" class="card-img-top" alt="Jaket">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">
+                                FLATSHOES JARING💫
+                            </h5>
+
+                            <p class="card-text text-muted">
+                                Sepatu flatshoes jaring dengan desain kekinian, breathable, nyaman di kaki,
+                                mudah dipadukan dengan berbagai outfit favoritmu setiap hari.🔥
+                            </p>
+
+                            <h5 class="text-primary">
+                                Rp35.000
+                            </h5>
+
+                            <a href="https://wa.me/6285896678641" class="btn btn-primary 2-100 mt-2">
+                                Pesan
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+
+                    <div class="card h-100 shadow-sm">
+
+                        <img src="gambar/sepatu3.jpeg" class="card-img-top" alt="Jaket">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">
+                                FLATSHOES JARING💫
+                            </h5>
+
+                            <p class="card-text text-muted">
+                                Bikin penampilan makin stylish dengan flatshoes jaring yang simpel,
+                                manis, dan nyaman menemani langkahmu ke mana saja tanpa ribet.🔥
+                            </p>
+
+                            <h5 class="text-primary">
+                                Rp35.000
+                            </h5>
+
+                            <a href="https://wa.me/6285896678641" class="btn btn-primary 2-100 mt-2">
+                                Pesan
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+
+                    <div class="card h-100 shadow-sm">
+
+                        <img src="gambar/sepatu4.jpeg" class="card-img-top" alt="Jaket">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">
+                                FLATSHOES JARING💫
+                            </h5>
+
+                            <p class="card-text text-muted">
+                                Wajib punya flatshoes jaring yang modis dan praktis! Cocok untuk gaya kasual,
+                                feminin, serta melengkapi outfit harianmu agar makin kece.🔥
+                            </p>
+
+                            <h5 class="text-primary">
+                                Rp35.000
+                            </h5>
+
+                            <a href="https://wa.me/6285896678641" class="btn btn-primary 2-100 mt-2">
+                                Pesan
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="vidio" class="produk py-5">
+        <div class="container">
+
+            <div class="row justify-content-center mt-4">
+                <div class="col-lg-4">
+                    <div class="card shadow border-0 overflow-hidden">
+                        <video class="w-100 h-100" controls autoplay muted loop>
+                            <source src="vidio/pp.mp4">
+                            Browser Anda tidak mendukung pemutaran video.
+                        </video>
+                        <div class="card-body text-center bg-white py-3">
+                            <h5 class="text-muted mb-0 fw-bold">Talyca Store✨</h5>
+                            <p class="text-muted mb-0 fw-semibold">
+                                menyediakan baju yang Cocok banget buat ngampus, kerja, atau sekadar hangout cantik.
+                                Bahan adem,
+                                nggak bikin gerah seharian.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card shadow border-0 overflow-hidden">
+                        <!-- Link video YouTube yang disematkan ke dalam format embed src -->
+                        <video class="w-100 h-100" controls autoplay muted loop>
+                            <source src="vidio/pp2.mp4">
+                            Browser Anda tidak mendukung pemutaran video.
+                        </video>
+                        <div class="card-body text-center bg-white py-3">
+                            <h5 class="text-muted mb-0 fw-bold"> Lokasi Talyca Store📍</h5>
+                            <p class="text-muted mb-0 fw-semibold">
+                                Talyca Store hadir secara online, melayani pembelian fashion kekinian dengan mudah.
+                                Pesan dari rumah, Yuk cheackout sekarang!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card shadow border-0 overflow-hidden">
+                        <!-- Link video YouTube yang disematkan ke dalam format embed src -->
+                        <video class="w-100 h-100" controls autoplay muted loop>
+                            <source src="vidio/pp3.mp4">
+                            Browser Anda tidak mendukung pemutaran video.
+                        </video>
+                        <div class="card-body text-center bg-white py-3">
+                            <h5 class="text-muted mb-0 fw-bold">Serba 35rb🛍️</h5>
+                            <p class="text-muted mb-0 fw-semibold">
+                                Baju kece cuma 35K! Banyak pilihan model kekinian,
+                                cocok buat OOTD. Yuk, buruan checkout sekarang sebelum kehabisan, bestie!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="bg-light py-5">
+
+        <div class="container mt-5 mb-5">
+            <div class="row align-item-center">
+
+                <div class="col-md-5 text-center mt-4 mt-md-0">
+
+                    <img src="gambar/logo.jpg" alt="Logo LKP Langgas Sinau" class="img-fluid" style="max-width: 400px;">
+                </div>
+
+
+                <div class="col-md-7 p-5">
+
+
+
+                    <h3 class="fw-bold" id="tentang">
+                        Tentang Talyca Store✨
+                    </h3>
+
+                    <p class="lead">
+                        TALYCA STORE — Belanja Cantik, Harga Menarik! 🛍️💗
+                    </p>
+                    <p class="lead">
+                        Temukan berbagai produk pilihan yang stylish, kekinian, dan cocok untuk melengkapi kebutuhanmu
+                        sehari-hari.
+                        Dengan pilihan produk menarik dan harga bersahabat, Talyca Store siap menemani gaya kamu agar
+                        semakin percaya diri.
+                        Yuk, belanja sekarang dan temukan produk favoritmu hanya di @talyca.store! 💕✨
+                    </p>
+
+                    <a href="https://wa.me/6285896678641" class="btn btn-primary me-2">
+                        Hubungi kami
+                    </a>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+    </section>
+
+
+    <section class="bg-light py-5">
+        <div class="container">
+            <div class="text-center">
+                <span class="badge bg-primary opacity-50  p-2 mb-3">
+                    Testimoni
+                </span>
+
+                <h1 class="fw-bold">
+                    Kata Mereka <span class="text-primary opacity-50 ">Tentang Talyca Store</span>
+                </h1>
+            </div>
+
+            <section class="produk py-5">
+
+                <div class="row mt-4 g-3">
+                    <div class="col-md-3 col-lg-3">
+
+                        <div class="card shadow-sm">
+
+
+
+                            <div class="card-body">
+
+                                <div class="card-title fw-bold mt-2">
+                                    <i class="bi bi-person-video"></i> Budi Santoso <br>
+                                    <div class="ppx"> CEO Menyamar</div>
+                                </div>
+
+                                <div class="isi">
+                                    ⭐⭐⭐⭐⭐
+                                </div>
+
+                                <p class="card-text text-muted mt-3 mb-3">
+                                    "Belanja di Talyca Store sangat menyenangkan! Produknya menarik, modelnya kekinian,
+                                    dan pilihannya juga beragam. Barang yang ditawarkan cocok untuk kebutuhan
+                                    sehari-hari."
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-lg-3">
+
+                        <div class="card shadow-sm">
+
+
+
+                            <div class="card-body">
+
+                                <div class="card-title fw-bold mt-2">
+                                    <i class="bi bi-person-video"></i> Vina Nurjannah<br>
+                                    <div class="ppx"> CEO Sawit</div>
+                                </div>
+
+                                <div class="isi">
+                                    ⭐⭐⭐⭐
+                                </div>
+
+                                <p class="card-text text-muted mt-3 mb-3">
+                                    "Talyca Store menjadi pilihan menarik untuk mencari produk fashion dan aksesori yang
+                                    kekinian.
+                                    Desain produknya terlihat cantik dan cocok digunakan dalam berbagai kesempatan."
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-lg-3">
+
+                        <div class="card shadow-sm">
+
+
+
+                            <div class="card-body">
+
+                                <div class="card-title fw-bold mt-2">
+                                    <i class="bi bi-person-video"></i> Deni Supratman<br>
+                                    <div class="ppx"> CEO Karet</div>
+                                </div>
+
+                                <div class="isi">
+                                    ⭐⭐⭐⭐⭐
+                                </div>
+
+                                <p class="card-text text-muted mt-3 mb-3">
+                                    "Suka dengan berbagai pilihan produk dari Talyca Store karena modelnya menarik dan
+                                    mengikuti tren masa kini. Banyak pilihan yang bisa dipertimbangkan untuk melengkapi
+                                    kebutuhan sehari-hari."
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-lg-3">
+
+                        <div class="card shadow-sm">
+
+
+
+                            <div class="card-body">
+
+                                <div class="card-title fw-bold mt-2">
+                                    <i class="bi bi-person-video"></i> Munir Botak<br>
+                                    <div class="ppx"> Anak Ilang</div>
+                                </div>
+
+                                <div class="isi">
+                                    ⭐⭐⭐
+                                </div>
+
+                                <p class="card-text text-muted mt-3 mb-3">
+                                    "Talyca Store punya pilihan produk yang menarik untuk kamu yang suka barang
+                                    kekinian.
+                                    Berbagai modelnya bisa menjadi inspirasi untuk melengkapi penampilan sehari-hari.
+                                    Tokonya juga nyaman."
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <div class="container mt-2 mb-3">
+
+        <h2 class="text-center mt-5">
+            ✨PRODUK BEST SELLER✨
+        </h2>
+
+        <p class="mt-3">
+            Sepatu
+        </p>
+        <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
+            aria-valuemax="100">
+            <div class="progress-bar bg-primary" style="width: 85%">85%</div>
+        </div>
+
+        <p class="mt-3">
+            Baju
+        </p>
+        <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
+            aria-valuemax="100">
+            <div class="progress-bar bg-primary" style="width: 75%">75%</div>
+        </div>
+
+        <p class="mt-3">
+            Celana
+        </p>
+        <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
+            aria-valuemax="100">
+            <div class="progress-bar bg-primary" style="width: 80%">80%</div>
+        </div>
+
+
+    </div>
+
+    <!-- HEADER -->
+    <section class="bg-light py-5">
+
+        <div class="container text-center">
+
+            <h1 class="fw-bold">
+                Hubungi Kami
+            </h1>
+
+            <p class="text-muted">
+                Silakan hubungi kami jika memiliki pertanyaan.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- KONTAK -->
+    <section class="py-5">
+
+        <div class="container">
+
+            <div class="row g-4">
+
+                <!-- INFORMASI -->
+                <div class="col-md-5">
+
+                    <h3 class="fw-bold" id="kontak">
+                        Informasi Kontak
+                    </h3>
+
+                    <p class="text-muted">
+                        Kamu dapat menghubungi Talyca Store
+                        melalui informasi berikut.
+                    </p>
+
+                    <div class="mt-4">
+
+                        <h6>
+                            WhatsApp
+                        </h6>
+
+                        <p class="text-muted">
+                            0853-7808-1580
+                        </p>
+
+                    </div>
+
+                    <div class="mt-3">
+
+                        <h6>
+                            Email
+                        </h6>
+
+                        <p class="text-muted">
+                            talycastore@gmail.com
+                        </p>
+
+                    </div>
+
+                    <div class="mt-3">
+
+                        <h6>
+                            Alamat
+                        </h6>
+
+                        <p class="text-muted">
+                            JL.Ki hajar dewantara, sebelah ADAcom kampus, metro timur, kota metro
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- FORM -->
+                <div class="col-md-7">
+
+                    <div class="card shadow-sm">
+
+                        <div class="card-body p-4">
+
+                            <h4 class="fw-bold mb-4">
+                                Kirim Pesan
+                            </h4>
+
+                            <form>
+
+                                <div class="mb-3">
+
+                                    <label class="form-label">
+                                        Nama
+                                    </label>
+
+                                    <input type="text" class="form-control" placeholder="Masukkan nama">
+
+                                </div>
+
+
+                                <div class="mb-3">
+
+                                    <label class="form-label">
+                                        Email
+                                    </label>
+
+                                    <input type="email" class="form-control" placeholder="Masukkan email">
+
+                                </div>
+
+
+                                <div class="mb-3">
+
+                                    <label class="form-label">
+                                        Pesan
+                                    </label>
+
+                                    <textarea class="form-control" rows="5" placeholder="Tulis pesan..."></textarea>
+
+                                </div>
+
+
+                                <button type="submit" class="btn btn-primary">
+                                    Kirim Pesan
+                                </button>
+
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer class="text-white pt-5 pb-4"
+        style="background: linear-gradient(180deg, #0b1e3f 0%, #07152e 100%); font-family: sans-serif;">
+        <div class="container">
+
+            <div class="row text-center pb-4 mb-4 border-bottom border-secondary border-opacity-25 g-4">
+                <div class="col-6 col-md-3">
+                    <div class="d-inline-flex align-items-center justify-content-center bg-primary bg-opacity-25 rounded-circle mb-2"
+                        style="width: 40px; height: 40px;">
+                        <i class="bi bi-whatsapp text-primary fs-5"></i>
+                    </div>
+                    <div class="text-white-50 extra-small" style="font-size: 0.75rem;">WhatsApp Sales</div>
+                    <div class="fw-bold small text-white">0853-7808-1580</div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="d-inline-flex align-items-center justify-content-center bg-primary bg-opacity-25 rounded-circle mb-2"
+                        style="width: 40px; height: 40px;">
+                        <i class="bi bi-envelope text-primary fs-5"></i>
+                    </div>
+                    <div class="text-white-50 extra-small" style="font-size: 0.75rem;">Email</div>
+                    <div class="fw-bold small text-white">talycastore@gmail.com</div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="d-inline-flex align-items-center justify-content-center bg-primary bg-opacity-25 rounded-circle mb-2"
+                        style="width: 40px; height: 40px;">
+                        <i class="bi bi-clock text-primary fs-5"></i>
+                    </div>
+                    <div class="text-white-50 extra-small" style="font-size: 0.75rem;">Jam Operasional</div>
+                    <div class="fw-bold small text-white">Setiap Hari, 09.00-21.00</div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="d-inline-flex align-items-center justify-content-center bg-primary bg-opacity-25 rounded-circle mb-2"
+                        style="width: 40px; height: 40px;">
+                        <i class="bi bi-geo-alt text-primary fs-5"></i>
+                    </div>
+                    <div class="text-white-50 extra-small" style="font-size: 0.75rem;">Domisili</div>
+                    <div class="fw-bold small text-white">JL.Ki hajar dewantara, metro timur, kota metro</div>
+                </div>
+            </div>
+
+            <div class="row g-4 pb-5">
+                <div class="col-lg-6 col-md-6">
+                    <h3 class="fw-bold text-white mb-3">Talyca Store</h3>
+                    <p class="text-white-50 small pe-lg-4 mb-4" style="line-height: 1.6;">
+                        Temukan berbagai produk pilihan yang stylish, kekinian, dan cocok untuk melengkapi kebutuhanmu
+                        sehari-hari.
+
+                    </p>
+                    <div class="d-flex gap-2">
+                        <a href="https://www.instagram.com/talyca.store?xtok=c2F0aW04dzJydHhv"
+                            class="btn btn-outline-light rounded-3 d-flex align-items-center justify-content-center p-0 border-opacity-25 bg-white bg-opacity-10"
+                            style="width: 36px; height: 36px;">
+                            <i class="bi bi-instagram text-white"></i>
+                        </a>
+                        <a href="#"
+                            class="btn btn-outline-light rounded-3 d-flex align-items-center justify-content-center p-0 border-opacity-25 bg-white bg-opacity-10"
+                            style="width: 36px; height: 36px;">
+                            <i class="bi bi-envelope text-white"></i>
+                        </a>
+                        <a href="https://wa.me/6285896678641"
+                            class="btn btn-outline-light rounded-3 d-flex align-items-center justify-content-center p-0 border-opacity-25 bg-white bg-opacity-10"
+                            style="width: 36px; height: 36px;">
+                            <i class="bi bi-whatsapp text-white"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-6" id="lokasi">
+                    <h3 class="fw-bold text-white mb-3">Lokasi Talyca Store</h3>
+                    <p class="text-white-50 small pe-lg-4 mb-4" style="line-height: 1.6;">
+                        Lokasi Talyca Store, datang dan temukan berbagai baju dengan motif kekinian.!
+                    </p>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3973.900049515692!2d105.32521039999999!3d-5.1198061!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e40bd48e284ff21%3A0x195e1d53ef08ee48!2sTALYCA%20STORE!5e0!3m2!1sid!2sid!4v1793168629943!5m2!1sid!2sid"
+                        width="300" height="150" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="strict-origin-when-cross-origin">
+                    </iframe>
+                </div>
+
+
+
+                <div class="pt-4 border-top border-secondary border-opacity-25 d-flex flex-column flex-md-row justify-content-between align-items-center text-white-50 small gap-2"
+                    style="font-size: 0.8rem;">
+                    <div>
+                        ©2026 David Rivaldo. All rights reserved.
+                    </div>
+                    <div>
+                        NIB OSS: 2306260160666
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="js/auth.js"></script>
+</body>
+
+</html>
